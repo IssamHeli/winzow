@@ -230,27 +230,83 @@
     .wz-benefits b { display:block; font-size:.98rem; color:var(--wz-ink); margin-bottom:2px; }
     .wz-benefits p { margin:0; font-size:.88rem; color: var(--wz-muted); }
 
-    /* ---------- TESTIMONIALS ---------- */
-    .wz-reviews { display:grid; gap:16px; }
+    /* ---------- TESTIMONIALS (Updated for Images) ---------- */
+    .wz-reviews {
+      display: grid;
+      gap: 20px;
+      margin-top: 24px;
+    }
     .wz-review {
-      background: var(--wz-surface); border:1px solid var(--wz-line);
-      border-radius: var(--wz-radius); padding:18px 18px 16px;
+      background: var(--wz-surface);
+      border: 1px solid var(--wz-line);
+      border-radius: var(--wz-radius);
+      padding: 24px;
       box-shadow: var(--wz-shadow);
-      position:relative;
+      position: relative;
     }
-    .wz-stars { color: var(--wz-gold); letter-spacing:2px; font-size:.95rem; margin-bottom:8px; }
-    .wz-review p { font-size:.95rem; color: var(--wz-text); font-style: italic; }
-    .wz-review .who { display:flex; align-items:center; gap:10px; margin-top:12px; }
+    .wz-stars {
+      color: var(--wz-gold);
+      letter-spacing: 2px;
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+    .wz-review p {
+      font-size: 1rem;
+      color: var(--wz-text);
+      font-style: italic;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .wz-review .who {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--wz-line); /* Modern divider */
+    }
+    
+    /* MODIFIED: The specific styling for image avatars */
     .wz-avatar {
-      width:38px; height:38px; border-radius:50%; flex:0 0 auto;
-      display:grid; place-items:center; font-weight:800; color:#fff;
-      background: linear-gradient(135deg, var(--wz-gold-deep), var(--wz-rose));
-      font-size:.9rem;
+      width: 54px;         /* Increased from 46px for better clarity */
+      height: 40px;        /* Must remain equal to width for a perfect circle */
+      border-radius: 10%;  /* Perfect circle */
+      flex: 0 0 auto;
+      
+      /* Image fitting properties */
+      object-fit: cover;   
+      object-position: center; 
+      border: 2px solid var(--wz-gold); 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
     }
-    .wz-who-meta b { font-size:.86rem; }
-    .wz-who-meta span { font-size:.76rem; color: var(--wz-muted); }
-    .wz-verified { margin-left:auto; font-size:.7rem; font-weight:700; color: var(--wz-success); }
+    
+    .wz-who-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .wz-who-meta b {
+      font-size: 0.95rem;
+      color: var(--wz-ink);
+    }
+    .wz-who-meta span {
+      font-size: 0.8rem;
+      color: var(--wz-muted);
+    }
+    .wz-verified {
+      margin-left: auto;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--wz-success);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
 
+    /* DESKTOP TUNING (Updated for grid) */
+    @media (min-width: 720px) {
+      .wz-reviews { grid-template-columns: 1fr 1fr; gap: 24px; }
+    }
     /* ---------- ORDER FORM ---------- */
     .wz-order { background: var(--wz-black); color: var(--wz-cream); }
     .wz-order .wz-h2 { color:#fff; }
@@ -473,8 +529,8 @@
           <div class="wz-stars">★★★★★</div>
           <p>"J'ai reçu ma montre à Cocody en 2 jours. J'ai payé le livreur seulement après l'avoir vue. La qualité est bien au-dessus du prix, tout le monde me demande où je l'ai achetée !"</p>
           <figcaption class="who">
-            <span class="wz-avatar">AK</span>
-            <span class="wz-who-meta"><b>Aïcha K.</b><br><span>Abidjan · Cocody</span></span>
+            <img src="images/aicha_img.jpg" alt="Aïcha K." class="wz-avatar" />
+            <span class="wz-who-meta"><b>Aïcha K.</b><span>Abidjan · Cocody</span></span>
             <span class="wz-verified">✔ Vérifié</span>
           </figcaption>
         </figure>
@@ -482,8 +538,8 @@
           <div class="wz-stars">★★★★★</div>
           <p>"Commandée pour l'anniversaire de ma sœur à Yamoussoukro. Le coffret est magnifique et le paiement à la livraison m'a mise en confiance. Je recommande Winzow à 100%."</p>
           <figcaption class="who">
-            <span class="wz-avatar">FT</span>
-            <span class="wz-who-meta"><b>Fatou T.</b><br><span>Yamoussoukro</span></span>
+            <img src="images/fatoo_img.jpg" alt="Fatou T." class="wz-avatar" />
+            <span class="wz-who-meta"><b>Fatou T.</b><span>Yamoussoukro</span></span>
             <span class="wz-verified">✔ Vérifié</span>
           </figcaption>
         </figure>
@@ -499,7 +555,7 @@
 
       <form class="wz-formcard" id="wzForm" novalidate>
         <div class="wz-summary">
-          <img src="images/product-img04.jpeg" alt="Montre Winzow" width="56" height="56" loading="lazy" />
+          <img src="images/product_img01.jpeg" alt="Montre Winzow" width="56" height="56" loading="lazy" />
           <div class="t"><b>Montre Élégante Winzow</b><span>Livraison gratuite · Paiement à la réception</span></div>
           <div class="pr">17 000 F</div>
         </div>
@@ -511,7 +567,7 @@
         </div>
 
         <div class="wz-field" id="f-tel">
-          <label for="wz-tel">Numéro de Téléphone (WhatsApp) <span class="req">*</span></label>
+          <label for="wz-tel">Numéro de Téléphone  <span class="req">*</span></label>
           <input type="tel" id="wz-tel" name="telephone" inputmode="numeric" autocomplete="tel" placeholder="Ex : 07 00 00 00 00" required />
           <div class="wz-hint">📱 Un numéro WhatsApp nous permet de confirmer votre commande plus vite.</div>
           <div class="wz-err">Entrez un numéro valide (au moins 8 chiffres).</div>
