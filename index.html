@@ -106,22 +106,20 @@
     }
     .wz-hero-media {
       position: relative;
+      margin: 20px 0;
       border-radius: var(--wz-radius);
       overflow: hidden;
-      border: 1px solid rgba(200,163,73,.35);
-      box-shadow: var(--wz-shadow);
-      margin-bottom: 22px;
-      aspect-ratio: 4 / 3;
-      background: linear-gradient(135deg,#171511,#0c0b09);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--wz-line);
     }
-    /* replace src with your real product photo */
-    .wz-hero-media img { width:100%; height:100%; object-fit: cover; }
-    .wz-pricepill {
-      position:absolute; top:12px; right:12px;
-      background: var(--wz-gold); color: var(--wz-black);
-      font-weight:800; font-size:.95rem;
-      padding:8px 14px; border-radius:999px;
-      box-shadow: var(--wz-shadow-gold);
+
+    .wz-hero-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 16 / 9; /* Perfect aspect ratio for this high-end banner layout */
+      object-fit: cover;
+      object-position: 65% center; /* Keeps her face and the watch centered on small mobile screens */
     }
 
     .wz-price-row {
@@ -577,9 +575,9 @@
       <h1 class="wz-h1">La montre qui transforme chaque tenue en <em>élégance</em>.</h1>
       <p class="wz-sub">Une montre raffinée qui attire les regards et affirme votre style. Commandez aujourd'hui — <strong>vous ne payez qu'à la livraison.</strong></p>
 
+      <!-- UPDATED: Integrated banner.png as the main hero media -->
       <figure class="wz-hero-media">
-        <img src="images/hero.jpg" alt="Montre élégante pour femme Winzow en or rose avec bracelet assorti" width="1000" height="753" loading="eager" fetchpriority="high" />
-        <span class="wz-pricepill">17 000 FCFA</span>
+        <img src="images/banner.png" alt="Montre élégante pour femme Winzow au poignet" width="1000" height="562" loading="eager" fetchpriority="high" />
       </figure>
 
       <div class="wz-price-row">
