@@ -167,12 +167,21 @@
     .wz-badge b { display:block; font-size:.78rem; font-weight:700; color: var(--wz-ink); }
     .wz-badge span { font-size:.68rem; color: var(--wz-muted); }
 
-    /* ---------- BRAND LOGO ---------- */
-    .wz-brand { display:flex; justify-content:center; margin-bottom:18px; }
+     /* ---------- BRAND LOGO ---------- */
+    .wz-brand { 
+      display: flex; 
+      justify-content: center; 
+      margin-bottom: 24px; 
+    }
     .wz-brand img {
-      height:30px; width:auto; display:block;
-      background:#fff; padding:9px 18px; border-radius:999px;
-      box-shadow: 0 10px 26px -12px rgba(0,0,0,.6);
+      height: 38px; /* Slightly taller for better legibility */
+      width: auto; 
+      display: block;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5)); /* Adds depth without a harsh block background */
+      transition: transform 0.3s ease;
+    }
+    .wz-brand img:hover {
+      transform: scale(1.03);
     }
 
     /* ---------- GALLERY ---------- */
